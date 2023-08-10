@@ -9,6 +9,7 @@ export default createGlobalStyle`
 
   body {
     background-color: ${({ theme }) => theme.COLORS.DARK_400};
+    height: 100vh;
   }
 
   body, input, button, textarea {
