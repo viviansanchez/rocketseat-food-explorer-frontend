@@ -10,4 +10,22 @@ export default createGlobalStyle`
   body {
     background-color: ${({ theme }) => theme.COLORS.DARK_400};
   }
+
+  body, input, button, textarea {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  button, a {
+    cursor: pointer;
+    transition: filter 0.2s;
+  }
+
+  button:hover, a:hover {
+    filter: brightness(0.9);
+  }
 `

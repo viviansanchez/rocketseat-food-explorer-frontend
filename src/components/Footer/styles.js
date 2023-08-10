@@ -10,8 +10,6 @@ export const Container = styled.footer`
   align-items: center;
   gap: 0.5rem;
 
-  color: white;
-
   > div {
     display: flex;
     align-items: center;
@@ -22,15 +20,17 @@ export const Container = styled.footer`
       height: 1.125rem;
     };
 
-    p{
+    p {
+      font-family: 'Roboto', sans-serif;
       font-size: 0.95rem;
       font-weight: 700;
+      color: ${({ theme }) => theme.COLORS.LIGHT_700};
     }
   }
 
   > p {
     font-size: 0.75rem;
     font-weight: 400;
+    color: ${({ theme }) => theme.COLORS.LIGHT_200};
   }
 `
-// some details like font and color are missing, but overall component is done
