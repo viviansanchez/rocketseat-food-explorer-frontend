@@ -13,11 +13,21 @@ export const Container = styled.button`
   border: none;
   border-radius: 0.313rem;
 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+
   &:disabled {
     background-color: ${({theme}) => theme.COLORS.TOMATO_400};
   }
 
   &:hover {
     background-color: ${({theme}) => theme.COLORS.TOMATO_200};
+  }
+
+  svg {
+    width: 1.375rem;
+    height: 1.375rem;
   }
   `
