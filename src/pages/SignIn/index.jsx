@@ -4,6 +4,8 @@ import { Logo } from "../../components/Logo";
 import { Button } from "../../components/Button";
 import { Input } from "../../components/Input";
 
+import { Link } from "react-router-dom";
+
 export function SignIn() {
 
   return(
@@ -19,6 +21,10 @@ export function SignIn() {
         />
 
         <a href="#">Criar uma conta</a>
+
+        {/* <Link to={"/register"}>
+          Criar uma conta
+        </Link> */}
         
       </Form>
     </Container>
