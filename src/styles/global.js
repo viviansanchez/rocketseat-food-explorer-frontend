@@ -12,7 +12,7 @@ export default createGlobalStyle`
     height: 100vh;
   }
 
-  body, input, button, textarea {
+  body, button, textarea {
     font-family: 'Poppins', sans-serif;
     font-size: 16px;
   }

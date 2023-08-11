@@ -14,6 +14,8 @@ export const Container = styled.div`
 export const Form = styled.form`
  margin-top: 4.625rem;
  width: 400px;
+
+ border: 1px solid green;
 `
 
 
