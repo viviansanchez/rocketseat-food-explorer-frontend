@@ -18,7 +18,8 @@ export function SignIn() {
         title={"Entrar"} 
         />
 
-        {/*link (react router dom) */}
+        <a href="#">Criar uma conta</a>
+        
       </Form>
     </Container>
   )
