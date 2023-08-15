@@ -1,11 +1,12 @@
 import { Container, Main } from "./styles"
 
 import { Footer } from "../../../components/Footer"
+import { MobileNavbar } from "../../../components/MobileNavbar"
 
 export function UserHome() {
   return(
     <Container>
-      {/* navbar component */}
+      <MobileNavbar />
       <Main>
         {/* cta component */}
         {/* section 1 - refeições */}
