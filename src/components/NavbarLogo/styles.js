@@ -20,6 +20,7 @@ export const Container = styled.div`
     }
 
     p {
+      font-size: 1.325rem;
       font-weight: 700;
     }
   }
