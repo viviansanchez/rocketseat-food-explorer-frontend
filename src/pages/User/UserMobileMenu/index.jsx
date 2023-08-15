@@ -1,18 +1,18 @@
 import { Container, Header, Main } from "./styles"
 
-import { Input } from "../../components/Input"
-import { StyledLink } from "../../components/StyledLink"
-import { Footer } from "../../components/Footer"
+import { Input } from "../../../components/Input"
+import { StyledLink } from "../../../components/StyledLink"
+import { Footer } from "../../../components/Footer"
 
 import { PiXBold, PiMagnifyingGlassBold } from 'react-icons/pi'
 
-export function MobileMenu() {
+export function UserMobileMenu() {
 
   return(
     <Container>
       <Header>
         <a href="#">
-          <PiXBold />
+          <PiXBold /> 
         </a>
         {/* aqui usar use navigate -1 depois */}
         <p>Menu</p>

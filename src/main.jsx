@@ -5,13 +5,13 @@ import { ThemeProvider } from 'styled-components'
 import theme from './styles/theme'
 import GlobalStyles from './styles/global'
 
-import { MobileMenu } from './pages/MobileMenu'
+import { UserMobileMenu } from './pages/User/UserMobileMenu'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
       <GlobalStyles />
-      <MobileMenu />
+      <UserMobileMenu />
     </ThemeProvider>
   </React.StrictMode>,
 )
