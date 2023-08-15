@@ -5,6 +5,10 @@ export const Container = styled.footer`
   padding: 1.5rem;
   width: 100%;
 
+  grid-area: footer;
+
+  background-color: ${({ theme }) => theme.COLORS.DARK_600};
+
   display: flex;
   justify-content: space-between;
   align-items: center;
