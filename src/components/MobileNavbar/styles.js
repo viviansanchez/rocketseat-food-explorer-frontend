@@ -12,8 +12,6 @@ gap: 4.688rem;
 
 color: ${({theme}) => theme.COLORS.LIGHT_100};
 
-border: 1px solid red;
-
 a {
   width: 1.5rem;
   height: 1.5rem; 
@@ -54,5 +52,4 @@ a {
     right: -8px;
   }
 }
-
 `
