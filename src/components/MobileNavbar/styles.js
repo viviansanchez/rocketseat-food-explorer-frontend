@@ -5,6 +5,8 @@ grid-area: navbar;
 height: 7.125rem;
 padding: 3.5rem 1.75rem 1.5rem;
 
+background-color:  ${({theme}) => theme.COLORS.DARK_700};
+
 display: flex;
 align-items: center;
 justify-content: center;
