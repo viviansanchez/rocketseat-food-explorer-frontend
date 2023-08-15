@@ -24,7 +24,7 @@ margin-bottom: 2rem;
       width: 1.5rem;
       height: 1.5rem;
       color: ${({theme}) => theme.COLORS.LIGHT_400};
-      margin: 0 0.875rem;
+      margin-left: 0.875rem;
     }
 
     input {
