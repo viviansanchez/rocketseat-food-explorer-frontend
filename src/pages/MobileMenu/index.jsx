@@ -24,11 +24,9 @@ export function MobileMenu() {
           icon={PiMagnifyingGlassBold}
           className="teste"
         />
-        {/* componente Input: remover margin right do icone svg */}
         <StyledLink page={"/"} title={"Sair"}/>
       </Main>
       <Footer />
-      {/* componente Footer: falta background color, falta grid-area: footer  --> adicionar!*/}
 
     </Container>
   )
