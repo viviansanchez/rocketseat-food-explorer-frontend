@@ -28,12 +28,12 @@ export const Container = styled.div`
     padding-top: 2.25rem;
     padding-right: 1.313rem;
     
-    h2 {
+    h3 {
       font-size: 1.125rem;
       font-weight: 500;
     }
 
-    h3 {
+    h4 {
       font-size: 0.75rem;
       font-weight: 400;
     }
@@ -58,11 +58,11 @@ export const Container = styled.div`
     > div {
       width: 55%;
 
-      h2 {
+      h3 {
         font-size: 2.5rem;
       }
 
-      h3 {
+      h4 {
         font-size: 1rem;
       }
     }
