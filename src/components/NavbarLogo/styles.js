@@ -29,4 +29,14 @@ export const Container = styled.div`
     font-size: 0.75rem;
     color: ${({theme}) => theme.COLORS.CAKE_200};
   }
+
+  @media only screen and (min-width: 768px) {
+    flex-direction: column;
+    gap: 0;
+    
+    .admin-logo {
+      align-self: flex-end;
+      text-align: center;
+    }
+  }
 `
