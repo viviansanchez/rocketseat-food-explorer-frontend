@@ -54,4 +54,9 @@ a {
     right: -8px;
   }
 }
+
+@media only screen and (max-width: 420px){
+  gap: 0;
+  justify-content: space-between;
+}
 `
