@@ -11,7 +11,9 @@ export const Container = styled.div`
 
   position: relative;
 
-  border: 1px solid red;
+  border: 1px solid ${({theme}) => theme.COLORS.DARK_300};
+  border-radius: 0.5rem;
+  background-color: ${({theme}) => theme.COLORS.DARK_200};
 
   img {
     width: 5.5rem;
