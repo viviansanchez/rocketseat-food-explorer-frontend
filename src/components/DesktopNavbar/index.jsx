@@ -14,7 +14,12 @@ export function DesktopNavbar({ isAdmin = false }) {
     <Container> 
       <NavbarLogo isAdmin={isAdmin} />
       <Input className="input" icon={PiMagnifyingGlassBold} placeholder="Busque por pratos ou ingredientes" />
-      <Button className="button" title={"Pedidos (0)"} icon={PiReceipt}/>
+
+      {
+        isAdmin ? 
+        <Button className="button" title={"Novo prato"}/> :
+        <Button className="button" title={"Pedidos (0)"} icon={PiReceipt}/>
+      }
       <a href="#" className="logout">
         <FiLogOut />
       </a>
