@@ -67,8 +67,6 @@ export const Price = styled.p`
 `
 
 export const CounterAndButton = styled.div`
-  color: white;
-
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -76,5 +74,9 @@ export const CounterAndButton = styled.div`
   @media only screen and (min-width: 768px){
     flex-direction: row;
     align-items: center;
+
+    > button {
+      width: 5.75rem;
+    }
   }
 `
