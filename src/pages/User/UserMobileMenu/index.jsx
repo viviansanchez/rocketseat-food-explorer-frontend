@@ -1,7 +1,7 @@
 import { Container, Header, Main } from "./styles"
 
 import { Input } from "../../../components/Input"
-import { StyledLink } from "../../../components/StyledLink"
+import { MobileMenuLink } from "../../../components/MobileMenuLink"
 import { Footer } from "../../../components/Footer"
 
 import { PiXBold, PiMagnifyingGlassBold } from 'react-icons/pi'
@@ -24,7 +24,7 @@ export function UserMobileMenu() {
           icon={PiMagnifyingGlassBold}
           className="teste"
         />
-        <StyledLink page={"/"} title={"Sair"}/>
+        <MobileMenuLink page={"/"} title={"Sair"}/>
       </Main>
       <Footer />
 
