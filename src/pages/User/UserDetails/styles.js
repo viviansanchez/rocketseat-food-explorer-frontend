@@ -75,6 +75,13 @@ export const DishInfo = styled.div`
     font-weight: 400;
   }
 
+  .tags-container {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+
   @media only screen and (min-width: 768px){
     margin-top: 0;
 
@@ -92,11 +99,7 @@ export const CounterAndButtonContainer = styled.div`
   display: flex;
   gap: 1rem;
 
-  > div {
-    svg {
-      border: 1px solid blue;
-    }
-    border: 1px solid green;
-    
+  > button {
+    max-width: 10.125rem;
   }
 `
