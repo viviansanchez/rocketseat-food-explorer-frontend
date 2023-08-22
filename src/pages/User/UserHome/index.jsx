@@ -15,8 +15,6 @@ export function UserHome() {
       
       <Main>
         <Banner className="banner" />
-        {/* <Card isAdmin />
-        <Card /> */}
 
         <Meals>
           <SectionTitle title={"Refeições"} />
