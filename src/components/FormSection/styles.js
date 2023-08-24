@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const Container = styled.section`
-  height: 5rem;
+  /* height: 5rem; */
   width: 100%;
 
   h3 {
