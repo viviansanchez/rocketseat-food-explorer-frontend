@@ -2,12 +2,12 @@ import { Container } from "./styles";
 
 import { useId } from "react";
 
-export function Input({ label, icon: Icon, ...rest }) {
+export function Input({ label, icon: Icon, className, ...rest }) {
 
   const id = useId()
 
   return(
-    <Container>
+    <Container className={className}>
       {
         label &&
         <label htmlFor={id}>{label}</label>
