@@ -29,6 +29,9 @@ export const Container = styled.div`
   > button {
     height: 1rem;
     width: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     
     svg {
       height: 1rem;
