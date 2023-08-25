@@ -9,6 +9,6 @@ export const Container = styled.section`
     font-weight: 400;
     color: ${({theme}) => theme.COLORS.LIGHT_400};
 
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
   }
 `
