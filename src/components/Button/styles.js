@@ -18,12 +18,15 @@ export const Container = styled.button`
   align-items: center;
   gap: 0.5rem;
 
-  &:disabled {
-    background-color: ${({theme}) => theme.COLORS.TOMATO_400};
-  }
+  transition: background-color 500ms;
 
   &:hover {
     background-color: ${({theme}) => theme.COLORS.TOMATO_200};
+  }
+
+  &:disabled {
+    background-color: ${({theme}) => theme.COLORS.TOMATO_400};
+    cursor: not-allowed;
   }
 
   svg {
