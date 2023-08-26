@@ -32,10 +32,16 @@ export const Container = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+
+    transition: scale 100ms;
     
     svg {
       height: 1rem;
       width: 1rem;
+    }
+
+    &:hover {
+      scale: 1.2;  
     }
   }
 `
