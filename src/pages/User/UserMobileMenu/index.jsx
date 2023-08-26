@@ -6,6 +6,8 @@ import { Footer } from "../../../components/Footer"
 
 import { PiXBold, PiMagnifyingGlassBold } from 'react-icons/pi'
 
+// maybe this page should be turne into a component instead of a page!! 
+
 export function UserMobileMenu() {
 
   return(
