@@ -8,10 +8,10 @@ import { Input } from "../Input"
 import { Button } from "../Button";
 
 
-export function DesktopNavbar({ isAdmin = false }) {
+export function DesktopNavbar({ isAdmin = false, className }) {
 
   return(
-    <Container> 
+    <Container className={className}> 
       <NavbarLogo isAdmin={isAdmin} />
       <Input className="input" icon={PiMagnifyingGlassBold} placeholder="Busque por pratos ou ingredientes" />
 

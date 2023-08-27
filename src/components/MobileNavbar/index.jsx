@@ -4,10 +4,10 @@ import { NavbarLogo } from "../NavbarLogo"
 
 import { PiListBold, PiReceipt } from 'react-icons/pi'
 
-export function MobileNavbar({ isAdmin = false }) {
+export function MobileNavbar({ isAdmin = false, className }) {
 
   return(
-    <Container>
+    <Container className={className}>
       <a href="#">
         <PiListBold className="list-svg"/>
       </a>
@@ -19,7 +19,6 @@ export function MobileNavbar({ isAdmin = false }) {
           <span>0</span>
         </div>
       }
-      
     </Container>
   )
 }
