@@ -9,7 +9,7 @@ import 'swiper/css/navigation'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Navigation } from 'swiper/modules'
 
-export function Carousel({ title, className }) {
+export function Carousel({ title, isAdmin = false, className }) {
   return(
     <Container className={className}>
       <SectionTitle title={title} />
@@ -47,17 +47,17 @@ export function Carousel({ title, className }) {
             }
           }}
         >
-          <SwiperSlide><Card /></SwiperSlide>
-          <SwiperSlide><Card /></SwiperSlide>
-          <SwiperSlide><Card /></SwiperSlide>
-          <SwiperSlide><Card /></SwiperSlide>
-          <SwiperSlide><Card /></SwiperSlide>
-          <SwiperSlide><Card /></SwiperSlide>
-          <SwiperSlide><Card /></SwiperSlide>
-          <SwiperSlide><Card /></SwiperSlide>
-          <SwiperSlide><Card /></SwiperSlide>
-          <SwiperSlide><Card /></SwiperSlide>
-          <SwiperSlide><Card /></SwiperSlide>
+          <SwiperSlide><Card isAdmin={isAdmin} /></SwiperSlide>
+          <SwiperSlide><Card isAdmin={isAdmin} /></SwiperSlide>
+          <SwiperSlide><Card isAdmin={isAdmin} /></SwiperSlide>
+          <SwiperSlide><Card isAdmin={isAdmin} /></SwiperSlide>
+          <SwiperSlide><Card isAdmin={isAdmin} /></SwiperSlide>
+          <SwiperSlide><Card isAdmin={isAdmin} /></SwiperSlide>
+          <SwiperSlide><Card isAdmin={isAdmin} /></SwiperSlide>
+          <SwiperSlide><Card isAdmin={isAdmin} /></SwiperSlide>
+          <SwiperSlide><Card isAdmin={isAdmin} /></SwiperSlide>
+          <SwiperSlide><Card isAdmin={isAdmin} /></SwiperSlide>
+          <SwiperSlide><Card isAdmin={isAdmin} /></SwiperSlide>
         </Swiper>      
       </div>
     </Container>
