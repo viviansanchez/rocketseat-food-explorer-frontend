@@ -2,9 +2,9 @@ import { Container } from "./styles";
 
 import img from '../../assets/banner-macarons.png'
 
-export function Banner() {
+export function Banner({ className }) {
   return(
-    <Container>
+    <Container className={className}>
       <img src={img} alt="macarons de diferentes sabores, com frutas vermelhas ao redor" />
       <div>
         <h3>Sabores inigualáveis</h3>
