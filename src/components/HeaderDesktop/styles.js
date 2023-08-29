@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const Container = styled.nav`
+export const Container = styled.div`
   grid-area: navbar;
   height: 7.125rem;
   padding: 1.5rem 7.688rem;

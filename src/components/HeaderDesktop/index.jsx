@@ -8,7 +8,7 @@ import { Input } from "../Input"
 import { Button } from "../Button";
 
 
-export function DesktopNavbar({ isAdmin = false, className }) {
+export function HeaderDesktop({ isAdmin = false, className }) {
 
   return(
     <Container className={className}> 
