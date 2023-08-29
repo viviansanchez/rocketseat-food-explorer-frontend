@@ -7,7 +7,7 @@ export const Container = styled.div`
   display: grid;
   grid-template-rows: 7.125rem auto 4.875rem;
   grid-template-areas: 
-  "navbar"
+  "header"
   "main"
   "footer"
   ;

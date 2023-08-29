@@ -4,8 +4,7 @@ import img from "../../../assets/ravanello-salad.png"
 
 import { PiReceipt } from 'react-icons/pi'
 
-import { MobileNavbar } from "../../../components/MobileNavbar"
-import { DesktopNavbar } from "../../../components/DesktopNavbar"
+import { Header } from "../../../components/Header"
 import { Tag } from "../../../components/Tag"
 import { Counter } from "../../../components/Counter"
 import { Button } from "../../../components/Button"
@@ -14,8 +13,7 @@ import { Footer } from "../../../components/Footer"
 export function UserDetails() {
   return(
     <Container>
-      <MobileNavbar />
-      {/* <DesktopNavbar /> */}
+      <Header />
 
       <Main>
         {/* PreviousPageLink component - create when routing is done */}

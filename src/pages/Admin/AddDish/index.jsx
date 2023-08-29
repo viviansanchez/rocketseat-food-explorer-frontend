@@ -1,7 +1,6 @@
 import { Container, Main, Form } from "./styles";
 
-import { MobileNavbar } from '../../../components/MobileNavbar'
-import { DesktopNavbar } from '../../../components/DesktopNavbar'
+import { Header } from '../../../components/Header'
 import { InputImage } from "../../../components/InputImage";
 import { Input } from '../../../components/Input'
 import { Select } from '../../../components/Select'
@@ -15,9 +14,7 @@ export function AddDish(){
 
   return(
     <Container>
-      <MobileNavbar isAdmin />
-      {/* <DesktopNavbar isAdmin /> */}
-      {/* again, these above are here for now, will resolve this later */}
+      <Header isAdmin />
 
       <Main>
         {/* PreviousPageLink component - create when routing is done */}

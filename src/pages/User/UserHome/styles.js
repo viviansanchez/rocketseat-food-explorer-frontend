@@ -6,28 +6,10 @@ export const Container = styled.div`
   display: grid;
   grid-template-rows: 7.125rem auto 4.875rem;
   grid-template-areas: 
-  "navbar"
+  "header"
   "main"
   "footer"
   ;
-
-  /* .hide {
-    display: none;
-  }
-
-  .show {
-    display: block;
-  }
-
-  @media only screen and (min-width: 768px) {
-    .hide {
-      display: block;
-    }
-
-    .show {
-      display: none;
-    }
-  } */
 `
 
 export const Main = styled.main`
@@ -57,5 +39,3 @@ export const Main = styled.main`
     }
   }
 `
-
-//da pra usar classe hide e show com display none e display block pra deixar o navbar desktop escondido e ai trocar com media query (a partir de tal mobile vira display none e desktop vira display block)
