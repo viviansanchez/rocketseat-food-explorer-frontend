@@ -12,13 +12,13 @@ export const Container = styled.nav`
 
   background-color:  ${({theme}) => theme.COLORS.DARK_700};
 
-  > div:nth-child(2){
+  .input {
     width: 36.313rem;
     margin-bottom: 0;
 
-     > div:nth-child(1){
+    > div {
       margin-top: 0;
-     }
+    }
   }
 
   .button {
@@ -40,7 +40,7 @@ export const Container = styled.nav`
     padding: 1.5rem 1rem;
     gap: 0.5rem;
 
-    div:nth-child(2){
+    .input {
       width: 20rem;
     }
   }
