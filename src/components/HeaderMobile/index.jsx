@@ -4,7 +4,7 @@ import { HeaderLogo } from "../HeaderLogo"
 
 import { PiListBold, PiReceipt } from 'react-icons/pi'
 
-export function MobileNavbar({ isAdmin = false, className }) {
+export function HeaderMobile({ isAdmin = false, className }) {
 
   return(
     <Container className={className}>
