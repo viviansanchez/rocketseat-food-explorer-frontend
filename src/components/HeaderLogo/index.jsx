@@ -1,6 +1,6 @@
 import { Container } from "./styles"
 
-export function NavbarLogo({ isAdmin = false }) {
+export function HeaderLogo({ isAdmin = false }) {
 
   return(
     <Container>
@@ -16,10 +16,6 @@ export function NavbarLogo({ isAdmin = false }) {
           <span>admin</span>
         </div>
       }
-      
-      
     </Container>
   )
 }
-
-// width="26" height="31"

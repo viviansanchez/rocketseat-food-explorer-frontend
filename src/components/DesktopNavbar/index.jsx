@@ -3,7 +3,7 @@ import { Container } from "./styles";
 import { FiLogOut } from 'react-icons/fi'
 import { PiReceipt, PiMagnifyingGlassBold } from "react-icons/pi";
 
-import { NavbarLogo } from "../NavbarLogo";
+import { HeaderLogo } from "../HeaderLogo";
 import { Input } from "../Input"
 import { Button } from "../Button";
 
@@ -12,7 +12,7 @@ export function DesktopNavbar({ isAdmin = false, className }) {
 
   return(
     <Container className={className}> 
-      <NavbarLogo isAdmin={isAdmin} />
+      <HeaderLogo isAdmin={isAdmin} />
       <Input className="input" icon={PiMagnifyingGlassBold} placeholder="Busque por pratos ou ingredientes" />
 
       {

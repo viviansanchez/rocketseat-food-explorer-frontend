@@ -1,6 +1,6 @@
 import { Container } from "./styles";
 
-import { NavbarLogo } from "../NavbarLogo"
+import { HeaderLogo } from "../HeaderLogo"
 
 import { PiListBold, PiReceipt } from 'react-icons/pi'
 
@@ -12,7 +12,7 @@ export function MobileNavbar({ isAdmin = false, className }) {
         <PiListBold className="list-svg"/>
       </a>
       {/* useNavigate/Link here in the future! */}
-      <NavbarLogo isAdmin={isAdmin} />
+      <HeaderLogo isAdmin={isAdmin} />
       {!isAdmin &&
         <div className="receipt">
           <PiReceipt className="receipt-svg" />
