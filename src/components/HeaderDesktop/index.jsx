@@ -7,6 +7,7 @@ import { HeaderLogo } from "../HeaderLogo";
 import { Input } from "../Input"
 import { Button } from "../Button";
 
+import { Link } from "react-router-dom";
 
 export function HeaderDesktop({ isAdmin = false, className }) {
 
@@ -17,7 +18,11 @@ export function HeaderDesktop({ isAdmin = false, className }) {
 
       {
         isAdmin ? 
-        <Button className="button" title={"Novo prato"}/> :
+        <Link to="/dishes/new"> 
+          <Button className="button" title={"Novo prato"} />
+        </Link>
+        // maybe this should be an onClick useNavigate instead? 
+         :
         <Button className="button" title={"Pedidos (0)"} icon={PiReceipt}/>
       }
       <a href="#" className="logout">
