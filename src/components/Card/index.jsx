@@ -21,7 +21,8 @@ export function Card({ isAdmin = false, title, description, price }) {
 
       <img src={img} alt="example image" />
 
-      <CardDishTitle href="#" title={"Salada Ravanello"} />
+      <CardDishTitle to="/dishes/5" title={"Salada Ravanello"} />
+      {/* /dishes/5 is static for now, will be changed when i connect the api */}
 
       <Description>
         a respeito da salada
