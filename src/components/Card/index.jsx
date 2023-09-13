@@ -7,7 +7,7 @@ import { Counter } from "../Counter";
 
 import { PiHeartBold, PiPencilSimpleBold } from 'react-icons/pi'
 
-
+import { Link } from "react-router-dom";
 
 export function Card({ isAdmin = false, title, description, price }) {
   //add on click function to <3 and btn with alert "feature in development"
@@ -15,8 +15,9 @@ export function Card({ isAdmin = false, title, description, price }) {
     <Container>
       {
         isAdmin ? 
-          <a href="#" className="top-icon"><PiPencilSimpleBold /></a> :
+          <Link to="/dishes/edit/5" className="top-icon"><PiPencilSimpleBold /></Link> :
           <button type="button" className="top-icon"><PiHeartBold /></button>  
+          // /dishes/edit/5 is static for now, will be changed when i connect the api 
       }
 
       <img src={img} alt="example image" />

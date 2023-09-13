@@ -35,6 +35,12 @@ export const Container = styled.div`
       color: ${({theme}) => theme.COLORS.LIGHT_300};
       width: 1.5rem;
       height: 1.375rem;
+
+      transition: scale 300ms;
+
+      &:hover {
+        scale: 1.2;
+      }
     }
   }
 
