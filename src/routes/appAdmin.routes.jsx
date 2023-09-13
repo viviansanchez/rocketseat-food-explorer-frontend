@@ -12,7 +12,7 @@ export function AppAdminRoutes() {
       <Route path="/" element={<AdminHome />} />
       <Route path="/dishes/:id" element={<AdminDetails />} />
       <Route path="/dishes/new" element={<AddDish />} />
-      <Route path="/dishes/edit" element={<EditDish />} />
+      <Route path="/dishes/edit/:id" element={<EditDish />} />
     </Routes>
   )
 }
