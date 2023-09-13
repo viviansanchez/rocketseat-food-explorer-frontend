@@ -12,9 +12,13 @@ export const Container = styled.div`
   @media only screen and (min-width: 768px){
     flex-direction: row;
     justify-content: center;
-    gap: 19.125rem;
+    gap: 2rem;
     
     padding-top: 0;
+ }
+
+ @media only screen and (min-width: 1100px){
+    gap: 19.125rem;
  }
 `
 
