@@ -28,11 +28,9 @@ export function SignIn() {
         title={"Entrar"} 
         />
 
-        <a href="#">Criar uma conta</a>
-
-        {/* <Link to={"/register"}>
+        <Link to={"/register"}>
           Criar uma conta
-        </Link> */}
+        </Link>
         
       </Form>
     </Container>
