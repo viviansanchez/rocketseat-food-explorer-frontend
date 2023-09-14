@@ -14,10 +14,22 @@ gap: 4.688rem;
 
 color: ${({theme}) => theme.COLORS.LIGHT_100};
 
-a {
+.toggle-navbar-display {
+  display: none;
+}
+
+.navbar-btn {
   width: 1.5rem;
   height: 1.5rem; 
   color: ${({theme}) => theme.COLORS.LIGHT_100};
+  background: none;
+  border: none;
+
+  transition: scale 400ms;
+
+  &:hover {
+    scale: 1.2;
+  }
 
   .list-svg {
     width: 1.5rem;
