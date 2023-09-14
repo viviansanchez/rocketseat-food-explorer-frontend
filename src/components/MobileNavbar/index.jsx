@@ -12,8 +12,9 @@ export function MobileNavbar({ className, onClick, children }) {
         </button>
         <h3>Menu</h3>
       </CloseBtnContainer>    
-        {children}
+        
       <SearchAndLinksContainer>
+        {children}
       </SearchAndLinksContainer>  
 
       <Footer />
