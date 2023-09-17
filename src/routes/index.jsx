@@ -4,12 +4,14 @@ import { AppUserRoutes } from "./appUser.routes";
 import { AppAdminRoutes } from "./appAdmin.routes";
 import { AuthRoutes } from "./auth.routes";
 
+import { useAuth } from "../hooks/auth";
+
 export function Routes(){
+  const { user } = useAuth()
+
   return(
     <BrowserRouter>
-      {/* <AppUserRoutes /> */}
-      {/* <AppAdminRoutes /> */}
-      <AuthRoutes />
+      {user ? (user.isAdmin ? <AppAdminRoutes /> : <AppUserRoutes />) : <AuthRoutes />}
     </BrowserRouter>
   )
 }
