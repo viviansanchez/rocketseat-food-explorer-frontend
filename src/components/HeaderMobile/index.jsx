@@ -34,7 +34,6 @@ export function HeaderMobile({ isAdmin = false, className }) {
           />
           <MobileNavbarLink page={"/dishes/new"} title={"Novo prato"}/>
           <MobileNavbarLink page={"/"} title={"Sair"} onClick={SignOut}/>
-          {/* check later if I have to change this for logout to work*/}
         </MobileNavbar>
       }
 
@@ -49,7 +48,6 @@ export function HeaderMobile({ isAdmin = false, className }) {
             icon={PiMagnifyingGlassBold}
           />
           <MobileNavbarLink page={"/"} title={"Sair"}/>
-          {/* check later if I have to change this for logout to work */}
         </MobileNavbar>
       }
       
@@ -58,7 +56,6 @@ export function HeaderMobile({ isAdmin = false, className }) {
         <PiListBold className="list-svg"/>
       </button>
       
-      {/* useNavigate/Link here in the future! agora nao mais pq a ideia é outra!! --> agora o icone é botao e nao link!!!*/}
       <HeaderLogo isAdmin={isAdmin} />
       {!isAdmin &&
         <div className="receipt">
