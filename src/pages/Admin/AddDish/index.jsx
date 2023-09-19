@@ -1,4 +1,7 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+
+import { api } from "../../../services/api";
 
 import { Container, Main, Form } from "./styles";
 
@@ -14,16 +17,61 @@ import { Button } from '../../../components/Button'
 import { Footer } from '../../../components/Footer'
 
 export function AddDish(){
-  const [tags, setTags] = useState([])
-  const [newTag, setNewTag] = useState("")
+  //filename
+  const [title, setTitle] = useState("")
+  const [category, setCategory] = useState("")
+  const [ingredients, setIngredients] = useState([])
+  const [newIngredient, setNewIngredient] = useState("")
+  const [price, setPrice] = useState("")
+  const [description, setDescription] = useState("")
 
-  function handleAddTag() {
-    setTags(prevState => [...prevState, newTag])
-    setNewTag("")
+  const navigate = useNavigate()
+
+  function handleAddIngredient() {
+    setIngredients(prevState => [...prevState, newIngredient])
+    setNewIngredient("")
   }
 
-  function handleRemoveTag(deleted) {
-    setTags(prevState => prevState.filter(tag => tag !== deleted))
+  function handleRemoveIngredient(deleted) {
+    setIngredients(prevState => prevState.filter(ingredient => ingredient !== deleted))
+  }
+
+  async function handleNewDish() {
+    //check if !fotoDoPrato return alert("É necessário enviar uma imagem do prato")
+
+    if(!title) {
+      return alert("É necessário digitar o nome do prato")
+    }
+
+    if(category == "") {
+      return alert("É necessário escolher a categoria do prato")
+    }
+
+    if(newIngredient) {
+      return alert("Você deixou um ingrediente no campo para adicionar, mas não clicou em adicionar. Clique para adicionar ou deixe o campo vazio")
+    }
+
+    if(!price) {
+      return alert("É necessário digitar o preço do prato")
+    }
+
+    if(!description) {
+      return alert("É necessário digitar a descrição do prato")
+    }
+    // console.log(title, category, ingredients, price, description)
+
+    await api.post("/dishes", {
+      title,
+      category,
+      ingredients,
+      price,
+      description 
+    }) 
+    // falta testar isso mas preciso resolver a questao da foto
+    //ok testei sem enviar a imagem, e deu tudo certo! falta resolver a questão do upload de imagem
+
+    alert("Prato criado com sucesso!")
+    navigate("/")
   }
 
   return(
@@ -40,6 +88,7 @@ export function AddDish(){
             label="Imagem do prato" 
             description="Selecione imagem"
             className="grid-image"
+            // onChange={e => setFilename(e.target.files)}  ??
           />
 
           <Input 
@@ -47,18 +96,24 @@ export function AddDish(){
             label="Nome" 
             placeholder="Ex: Salada Ceaser" 
             type="text"
+            onChange={e => setTitle(e.target.value)}
           />
 
-          <Select className="grid-category" label="Categoria" />
+          <Select 
+            className="grid-category" 
+            label="Categoria" 
+            state={category}
+            onChange={e => setCategory(e.target.value)}
+          />
           
           <FormSection className="grid-ingredients ingredients" title="Ingredientes">
             <div>
               {
-                tags.map((tag, index) => (
+                ingredients.map((ingredient, index) => (
                   <RegisterTag 
                     key={index}
-                    value={tag}
-                    onClick={() => handleRemoveTag(tag)}
+                    value={ingredient}
+                    onClick={() => handleRemoveIngredient(ingredient)}
                   />
                 ))
               }
@@ -66,9 +121,9 @@ export function AddDish(){
               <RegisterTag 
                 isNew 
                 placeholder="Adicionar"
-                value={newTag}
-                onChange={e => setNewTag(e.target.value)}
-                onClick={handleAddTag}
+                value={newIngredient}
+                onChange={e => setNewIngredient(e.target.value)}
+                onClick={handleAddIngredient}
               />
             </div>
           </FormSection>
@@ -78,15 +133,21 @@ export function AddDish(){
             label="Preço" 
             placeholder="R$00,00"
             type="text"
+            onChange={e => setPrice(e.target.value)}
           />
 
           <TextArea 
             label="Descrição" 
             placeholder="Fale brevemente sobre o prato, seus ingredientes e composição" 
             className="grid-textarea" 
+            onChange={e => setDescription(e.target.value)}
           />
 
-          <Button className="grid-btn" title="Salvar alterações"/>
+          <Button 
+            className="grid-btn" 
+            title="Salvar alterações"
+            onClick={handleNewDish}
+          />
         </Form>
 
       </Main>
