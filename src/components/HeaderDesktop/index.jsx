@@ -9,7 +9,10 @@ import { Button } from "../Button";
 
 import { Link } from "react-router-dom";
 
+import { useAuth } from "../../hooks/auth";
+
 export function HeaderDesktop({ isAdmin = false, className }) {
+  const { SignOut } = useAuth()
 
   return(
     <Container className={className}> 
@@ -21,14 +24,16 @@ export function HeaderDesktop({ isAdmin = false, className }) {
         <Link to="/dishes/new"> 
           <Button className="button" title={"Novo prato"} />
         </Link>
-        // maybe this should be an onClick useNavigate instead? 
          :
         <Button className="button" title={"Pedidos (0)"} icon={PiReceipt}/>
       }
-      <a href="#" className="logout">
+      <button
+       className="logout"
+       onClick={SignOut}
+      >
         <FiLogOut />
-      </a>
-      {/* usenavigate aqui */}
+      </button>
+
     </Container>
   )
 

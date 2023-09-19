@@ -29,6 +29,8 @@ export const Container = styled.div`
     width: 2rem;
     height: 2rem;
     color: ${({theme}) => theme.COLORS.LIGHT_100};
+    background: none;
+    border: none;
 
     svg {
       width: 2rem;

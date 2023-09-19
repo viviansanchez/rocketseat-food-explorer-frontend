@@ -7,7 +7,11 @@ import { MobileNavbarLink } from "../MobileNavbarLink"
 
 import { PiListBold, PiReceipt, PiMagnifyingGlassBold } from 'react-icons/pi'
 
+import { useAuth } from "../../hooks/auth";
+
 export function HeaderMobile({ isAdmin = false, className }) {
+  const { SignOut } = useAuth()
+
   function handleNavbarToggle() {
     //função que troca o display (atraves de classe --> toggle) -- fica no hamburguer e no x (precisa passar ela quando chamar o mobilenavbar) 
     //importante remover o scroll da página porque aparece o resto por baixo... pesquisar a respeito de como fazer isso
@@ -21,7 +25,7 @@ export function HeaderMobile({ isAdmin = false, className }) {
       { isAdmin &&
         <MobileNavbar 
           onClick={handleNavbarToggle} 
-          className="toggle-navbar-display"
+          // className="toggle-navbar-display"
         >
           <Input 
             type="text" 
@@ -29,7 +33,7 @@ export function HeaderMobile({ isAdmin = false, className }) {
             icon={PiMagnifyingGlassBold}
           />
           <MobileNavbarLink page={"/dishes/new"} title={"Novo prato"}/>
-          <MobileNavbarLink page={"/"} title={"Sair"}/>
+          <MobileNavbarLink page={"/"} title={"Sair"} onClick={SignOut}/>
           {/* check later if I have to change this for logout to work*/}
         </MobileNavbar>
       }
