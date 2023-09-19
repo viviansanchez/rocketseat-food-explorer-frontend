@@ -25,7 +25,7 @@ export function HeaderMobile({ isAdmin = false, className }) {
       { isAdmin &&
         <MobileNavbar 
           onClick={handleNavbarToggle} 
-          // className="toggle-navbar-display"
+          className="toggle-navbar-display"
         >
           <Input 
             type="text" 
