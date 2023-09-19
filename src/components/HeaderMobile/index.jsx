@@ -47,7 +47,7 @@ export function HeaderMobile({ isAdmin = false, className }) {
             placeholder="Busque por pratos ou ingredientes"
             icon={PiMagnifyingGlassBold}
           />
-          <MobileNavbarLink page={"/"} title={"Sair"}/>
+          <MobileNavbarLink page={"/"} title={"Sair"} onClick={SignOut}/>
         </MobileNavbar>
       }
       
