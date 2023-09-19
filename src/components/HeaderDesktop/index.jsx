@@ -7,12 +7,18 @@ import { HeaderLogo } from "../HeaderLogo";
 import { Input } from "../Input"
 import { Button } from "../Button";
 
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import { useAuth } from "../../hooks/auth";
 
 export function HeaderDesktop({ isAdmin = false, className }) {
   const { SignOut } = useAuth()
+  const navigate = useNavigate()
+
+  function handleSignOut() {
+    SignOut()
+    navigate("/")
+  }
 
   return(
     <Container className={className}> 
@@ -29,7 +35,7 @@ export function HeaderDesktop({ isAdmin = false, className }) {
       }
       <button
        className="logout"
-       onClick={SignOut}
+       onClick={handleSignOut}
       >
         <FiLogOut />
       </button>
