@@ -70,10 +70,18 @@ export function AddDish(){
     formData.append("price", price)
     formData.append("description", description)
 
-    await api.post("/dishes", formData)
+    try {
+      await api.post("/dishes", formData)
+      alert("Prato criado com sucesso!")
+      navigate("/")
+    } catch(err) {
+      if(err.response){
+        alert(err.response.data.message)
+      } else {
+        alert("Não foi possível cadastrar o prato")
+      }
+    }
 
-    alert("Prato criado com sucesso!")
-    navigate("/")
   }
 
   return(
