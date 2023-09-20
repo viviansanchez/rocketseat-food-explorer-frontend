@@ -1,7 +1,6 @@
 import styled from 'styled-components'
 
 export const Container = styled.nav`
-  /* display: none; isso vai ser controlado por uma classe no mobileheader*/
   display: grid;
   grid-template-rows: 7.125rem auto 4.875rem;
   grid-template-areas: 
@@ -10,11 +9,12 @@ export const Container = styled.nav`
     "footer"
   ;
 
-  position: absolute;
+  /* position: absolute; */
+  position: fixed;
   right: 0;
   top: 0;
   width: 100%;
-  height: 100vh;
+  height: 100%;
   z-index: 2;
 `
 

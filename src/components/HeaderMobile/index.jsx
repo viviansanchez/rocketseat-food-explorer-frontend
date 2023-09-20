@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 import { Container } from "./styles";
 
 import { HeaderLogo } from "../HeaderLogo"
@@ -11,21 +13,19 @@ import { useAuth } from "../../hooks/auth";
 
 export function HeaderMobile({ isAdmin = false, className }) {
   const { SignOut } = useAuth()
+  const [isActive, setIsActive] = useState(false)
 
-  function handleNavbarToggle() {
-    //função que troca o display (atraves de classe --> toggle) -- fica no hamburguer e no x (precisa passar ela quando chamar o mobilenavbar) 
-    //importante remover o scroll da página porque aparece o resto por baixo... pesquisar a respeito de como fazer isso
-    //https://stackoverflow.com/questions/54989513/react-prevent-scroll-when-modal-is-open
-    //outra questão aqui, quando clicar no mobilenavbar link a navbar precisa fechar!!!!
-    console.log('oi')
+  function handleNavbarToggle() { 
+    setIsActive(!isActive)
   }
+
   return(
     <Container className={className}>
 
       { isAdmin &&
         <MobileNavbar 
           onClick={handleNavbarToggle} 
-          className="toggle-navbar-display"
+          className={isActive ? null : "navbar-display-none"}
         >
           <Input 
             type="text" 
@@ -40,7 +40,7 @@ export function HeaderMobile({ isAdmin = false, className }) {
       { !isAdmin &&
         <MobileNavbar 
           onClick={handleNavbarToggle}
-          className="toggle-navbar-display"
+          className={isActive ? null : "navbar-display-none"}
         >
           <Input 
             type="text" 
@@ -52,7 +52,10 @@ export function HeaderMobile({ isAdmin = false, className }) {
       }
       
 
-      <button className="navbar-btn"> 
+      <button 
+        className="navbar-btn" 
+        onClick={handleNavbarToggle}
+      > 
         <PiListBold className="list-svg"/>
       </button>
       

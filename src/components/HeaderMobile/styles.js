@@ -14,7 +14,7 @@ gap: 4.688rem;
 
 color: ${({theme}) => theme.COLORS.LIGHT_100};
 
-.toggle-navbar-display {
+.navbar-display-none {
   display: none;
 }
 
@@ -35,6 +35,10 @@ color: ${({theme}) => theme.COLORS.LIGHT_100};
     width: 1.5rem;
     height: 1.5rem; 
   }
+}
+
+#navbar-btn {
+  border: 1px solid red;
 }
 
 .receipt {
