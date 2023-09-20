@@ -17,7 +17,7 @@ import { Button } from '../../../components/Button'
 import { Footer } from '../../../components/Footer'
 
 export function AddDish(){
-  //filename
+  const [image, setImage] = useState(null)
   const [title, setTitle] = useState("")
   const [category, setCategory] = useState("")
   const [ingredients, setIngredients] = useState([])
@@ -37,7 +37,9 @@ export function AddDish(){
   }
 
   async function handleNewDish() {
-    //check if !fotoDoPrato return alert("É necessário enviar uma imagem do prato")
+    if(!image) {
+      return alert("É necessário inserir uma foto do prato")
+    } 
 
     if(!title) {
       return alert("É necessário digitar o nome do prato")
@@ -58,17 +60,17 @@ export function AddDish(){
     if(!description) {
       return alert("É necessário digitar a descrição do prato")
     }
-    // console.log(title, category, ingredients, price, description)
 
-    await api.post("/dishes", {
-      title,
-      category,
-      ingredients,
-      price,
-      description 
-    }) 
-    // falta testar isso mas preciso resolver a questao da foto
-    //ok testei sem enviar a imagem, e deu tudo certo! falta resolver a questão do upload de imagem
+    const formData = new FormData()
+
+    formData.append("image", image)
+    formData.append("title", title)
+    formData.append("category", category)
+    formData.append("ingredients", ingredients)
+    formData.append("price", price)
+    formData.append("description", description)
+
+    await api.post("/dishes", formData)
 
     alert("Prato criado com sucesso!")
     navigate("/")
@@ -88,7 +90,7 @@ export function AddDish(){
             label="Imagem do prato" 
             description="Selecione imagem"
             className="grid-image"
-            // onChange={e => setFilename(e.target.files)}  ??
+            onChange={e => setImage(e.target.files[0])}
           />
 
           <Input 
