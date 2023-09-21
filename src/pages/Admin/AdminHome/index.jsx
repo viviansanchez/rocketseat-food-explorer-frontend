@@ -17,7 +17,6 @@ export function AdminHome() {
   const [desserts, setDesserts] = useState([])
 
   useEffect(() => {
-    console.log(`${search}`)
     async function fetchDishes(){
       const response = await api.get(`/dishes?search=${search}`)
       setDishes(response.data)
