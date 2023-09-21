@@ -1,48 +1,77 @@
-import { Container, Main, DishInfo } from "./styles";
+import { useParams, useNavigate } from "react-router-dom"
+import { useState, useEffect } from "react"
 
-import img from "../../../assets/ravanello-salad.png"
+import { api } from "../../../services/api"
 
-import { PiReceipt } from 'react-icons/pi'
+import { Container, Main, DishInfo } from "./styles"
 
-import { Header } from "../../../components/Header";
+
+import { PreviousPageNavigate } from "../../../components/PreviousPageNavigate"
+import { Header } from "../../../components/Header"
 import { Tag } from "../../../components/Tag"
 import { Button } from "../../../components/Button"
 import { Footer } from "../../../components/Footer"
 
+//known issue: ${api.defaults.baseURL}/files/${data.image} not working..
+
 export function AdminDetails() {
+  const navigate = useNavigate()
+
+  const params = useParams()
+  const [data, setData] = useState(null)
+
+  function handleEditDish() {
+    navigate(`/edit/${params.id}`)
+  }
+
+  useEffect(() => {
+    async function fetchDish() {
+      const response = await api.get(`dishes/${params.id}`)
+      setData(response.data)
+    } 
+
+    fetchDish()
+  },[])
+
   return(
     <Container>
       <Header isAdmin/>
 
-      <Main>
-        {/* PreviousPageLink component - create when routing is done */}
-        <a href="#">VOLTAR</a>
+      { data &&
+        <Main>
 
-        <div className="content-wrapper">
-          <img src={img} alt="placeholder dish" />
+          <PreviousPageNavigate />
 
-          <div className="divider-for-desktop-layout">
-            <DishInfo>
-              <h2>Salada Ravanello</h2>
-              <p>Informações a respeito da salada</p>
-              <div className="tags-container">
-                <Tag title={"exemplo"} />
-                <Tag title={"exemplo"} />
-                <Tag title={"exemplo"} />
-                <Tag title={"exemplo"} />
-              </div>
-              {/* tags component --> when api ready, map to show tags */}
-            </DishInfo>
+          <div className="content-wrapper">
+            <img 
+              src={`${api.defaults.baseURL}/files/${data.image}`} 
+              alt={`imagem do prato ${data.title}`} 
+            />
 
-            <Button title={"Editar prato"} />
-            {/* future useNavigate on this button */}
-          </div>
-        </div>
-        
+            <div className="divider-for-desktop-layout">
+              <DishInfo>
+                <h2>{data.title}</h2>
+                <p>{data.description}</p>
+                <div className="tags-container">
 
-        
-      </Main>
-      
+                  {
+                      data.ingredients.map(ingredient => (
+                        <Tag key={ingredient.id} title={ingredient.name} />
+                      ))                 
+                  }
+                 
+                </div>
+              </DishInfo>
+
+              <Button 
+                title={"Editar prato"} 
+                onClick={handleEditDish}
+              />
+            </div>
+          </div> 
+        </Main>
+      }
+
       <Footer />
     </Container>
   )
