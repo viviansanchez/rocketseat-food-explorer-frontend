@@ -55,10 +55,14 @@ export const Description = styled.p`
   font-size: 0.875rem;
   font-weight: 400;
 
-  display: none;
+  display: none; 
 
   @media only screen and (min-width: 768px){
     display: block;
+    max-width: 10rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 `
 

@@ -1,5 +1,4 @@
 import { Container, Description, Price, CounterAndButton } from "./styles";
-import img from '../../assets/ravanello-salad.png'
 
 import { CardDishTitle } from "../CardDishTitle";
 import { Button } from "../Button";
@@ -9,37 +8,41 @@ import { PiHeartBold, PiPencilSimpleBold } from 'react-icons/pi'
 
 import { Link } from "react-router-dom";
 
-export function Card({ isAdmin = false, title, description, price }) {
+import { api } from "../../services/api";
+
+export function Card({ isAdmin = false, data }) {
   //add on click function to <3 and btn with alert "feature in development"
+
+  const image = `${api.defaults.baseURL}/files/${data.image}`
+  //know issue: this is not working. error: get 404 not found.
+
   return(
     <Container>
       {
         isAdmin ? 
-          <Link to="/dishes/edit/5" className="top-icon"><PiPencilSimpleBold /></Link> :
+          <Link to={`/dishes/edit/${data.id}`} className="top-icon"><PiPencilSimpleBold /></Link> :
           <button type="button" className="top-icon"><PiHeartBold /></button>  
-          // /dishes/edit/5 is static for now, will be changed when i connect the api 
       }
 
-      <img src={img} alt="example image" />
+      <img 
+        // src={`${api.defaults.baseURL}/files/${data.image}`} -> not working either
+        src={image}
+        alt={`Imagem do prato ${data.title}`} 
+      />
 
-      <CardDishTitle to="/dishes/5" title={"Salada Ravanello"} />
-      {/* /dishes/5 is static for now, will be changed when i connect the api */}
+      <CardDishTitle to={`/dishes/${data.id}`} title={data.title} />
 
       <Description>
-        a respeito da salada
-        {/* {description} */}
+        {data.description}
       </Description>
 
       <Price>
-        R$49,90
-        {/* {price} */}
+        {data.price}
       </Price>
 
       {!isAdmin &&
         <CounterAndButton>
-          {/* <div>counter comp</div> */}
           <Counter />
-          {/* counter component */}
           <Button type="button" title={"incluir"} />
         </CounterAndButton> 
       }
