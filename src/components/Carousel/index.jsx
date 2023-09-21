@@ -9,7 +9,9 @@ import 'swiper/css/navigation'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Navigation } from 'swiper/modules'
 
-export function Carousel({ title, isAdmin = false, className }) {
+
+export function Carousel({ title, isAdmin = false, className, dishes }) {
+
   return(
     <Container className={className}>
       <SectionTitle title={title} />
@@ -47,21 +49,18 @@ export function Carousel({ title, isAdmin = false, className }) {
             }
           }}
         >
-          <SwiperSlide><Card isAdmin={isAdmin} /></SwiperSlide>
-          <SwiperSlide><Card isAdmin={isAdmin} /></SwiperSlide>
-          <SwiperSlide><Card isAdmin={isAdmin} /></SwiperSlide>
-          <SwiperSlide><Card isAdmin={isAdmin} /></SwiperSlide>
-          <SwiperSlide><Card isAdmin={isAdmin} /></SwiperSlide>
-          <SwiperSlide><Card isAdmin={isAdmin} /></SwiperSlide>
-          <SwiperSlide><Card isAdmin={isAdmin} /></SwiperSlide>
-          <SwiperSlide><Card isAdmin={isAdmin} /></SwiperSlide>
-          <SwiperSlide><Card isAdmin={isAdmin} /></SwiperSlide>
-          <SwiperSlide><Card isAdmin={isAdmin} /></SwiperSlide>
-          <SwiperSlide><Card isAdmin={isAdmin} /></SwiperSlide>
-        </Swiper>      
+          {
+            dishes.map(dish => (
+              <SwiperSlide key={dish.id}>
+                <Card 
+                isAdmin={isAdmin}
+                  data={dish}
+                />
+              </SwiperSlide>
+            ))
+          }
+        </Swiper>   
       </div>
     </Container>
   )
 }
-
-// SwiperSlides will be generated with map one api ir ready. These are just a static example.
