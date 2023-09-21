@@ -11,7 +11,7 @@ import { PiListBold, PiReceipt, PiMagnifyingGlassBold } from 'react-icons/pi'
 
 import { useAuth } from "../../hooks/auth";
 
-export function HeaderMobile({ isAdmin = false, className }) {
+export function HeaderMobile({ isAdmin = false, className, onChange }) {
   const { SignOut } = useAuth()
   const [isActive, setIsActive] = useState(false)
 
@@ -31,6 +31,7 @@ export function HeaderMobile({ isAdmin = false, className }) {
             type="text" 
             placeholder="Busque por pratos ou ingredientes"
             icon={PiMagnifyingGlassBold}
+            onChange={onChange}
           />
           <MobileNavbarLink page={"/dishes/new"} title={"Novo prato"}/>
           <MobileNavbarLink page={"/"} title={"Sair"} onClick={SignOut}/>
@@ -46,6 +47,7 @@ export function HeaderMobile({ isAdmin = false, className }) {
             type="text" 
             placeholder="Busque por pratos ou ingredientes"
             icon={PiMagnifyingGlassBold}
+            onChange={onChange}
           />
           <MobileNavbarLink page={"/"} title={"Sair"} onClick={SignOut}/>
         </MobileNavbar>

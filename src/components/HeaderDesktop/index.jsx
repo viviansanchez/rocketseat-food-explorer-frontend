@@ -11,7 +11,7 @@ import { Link, useNavigate } from "react-router-dom";
 
 import { useAuth } from "../../hooks/auth";
 
-export function HeaderDesktop({ isAdmin = false, className }) {
+export function HeaderDesktop({ isAdmin = false, className, onChange }) {
   const { SignOut } = useAuth()
   const navigate = useNavigate()
 
@@ -23,7 +23,12 @@ export function HeaderDesktop({ isAdmin = false, className }) {
   return(
     <Container className={className}> 
       <HeaderLogo isAdmin={isAdmin} />
-      <Input className="input" icon={PiMagnifyingGlassBold} placeholder="Busque por pratos ou ingredientes" />
+      <Input 
+        className="input" 
+        icon={PiMagnifyingGlassBold} 
+        placeholder="Busque por pratos ou ingredientes" 
+        onChange={onChange}
+      />
 
       {
         isAdmin ? 
