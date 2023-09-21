@@ -17,8 +17,19 @@ export const Container = styled(Link)`
     color: ${({theme}) => theme.COLORS.CAKE_200};
   }
 
+  p {
+    max-width: 10rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
   @media only screen and (min-width:768px){
     font-size: 1.5rem;
     font-weight: 700;
+
+    p {
+      max-width: 15.875rem;
+    }
   }
 `

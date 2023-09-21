@@ -6,7 +6,7 @@ export function CardDishTitle({ title, ...rest }) {
 
   return(
     <Container {...rest}>
-      {title} 
+      <p>{title}</p> 
       <PiCaretRightBold />
     </Container>
   )
