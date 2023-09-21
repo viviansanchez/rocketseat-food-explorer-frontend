@@ -5,8 +5,6 @@ import { api } from "../../../services/api";
 
 import { Container, Main, DishInfo, CounterAndButtonContainer } from "./styles";
 
-import img from "../../../assets/ravanello-salad.png"
-
 import { PiReceipt } from 'react-icons/pi'
 
 import { PreviousPageNavigate } from "../../../components/PreviousPageNavigate" 
