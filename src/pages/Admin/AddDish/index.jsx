@@ -53,6 +53,10 @@ export function AddDish(){
       return alert("Você deixou um ingrediente no campo para adicionar, mas não clicou em adicionar. Clique para adicionar ou deixe o campo vazio")
     }
 
+    if(ingredients.length === 0){
+      return alert("É necessário adicionar ao menos um ingrediente")
+    }
+
     if(!price) {
       return alert("É necessário digitar o preço do prato")
     }
