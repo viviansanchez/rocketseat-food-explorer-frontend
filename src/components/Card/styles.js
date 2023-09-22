@@ -47,6 +47,11 @@ export const Container = styled.div`
   @media only screen and (min-width: 768px){
     width: 19rem;
     gap: 0.938rem;
+
+    img {
+      width: 11rem;
+      height: 11rem;
+    }
   }
 `
 
