@@ -14,12 +14,9 @@ import { Counter } from "../../../components/Counter"
 import { Button } from "../../../components/Button"
 import { Footer } from "../../../components/Footer"
 
-//known issue:${api.defaults.baseURL}/files/${data.image} not working..
-
 export function UserDetails() {
   const params = useParams()
   const [data, setData] = useState(null)
-  const [image, setImage] = useState(null)
 
   function handleOrder() {
     alert("Esta funcionalidade ainda não está disponível!")
@@ -29,19 +26,10 @@ export function UserDetails() {
     async function fetchDish() {
       const response = await api.get(`/dishes/${params.id}`)
       setData(response.data)
-      // setImage(data.image)
-      //failed attempt to solve image issue
     }
 
     fetchDish()
   }, [])
-
-  // useEffect(() => {
-  //   if(data) {
-  //     setImage(`${api.defaults.baseURL}/files/${data.image}`)
-  //   }
-  // },[data])
-  //failed attempt to resolve image issue
 
   return(
     <Container>
@@ -53,8 +41,7 @@ export function UserDetails() {
 
           <div className="content-wrapper">
             <img 
-              // src={`${api.defaults.baseURL}/files/${data.image}`} 
-              src={image}
+              src={`${api.defaults.baseURL}/files/${data.image}`} 
               alt={`placeholder para o prato ${data.title}`} 
             />
 

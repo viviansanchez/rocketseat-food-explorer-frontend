@@ -12,8 +12,6 @@ import { Tag } from "../../../components/Tag"
 import { Button } from "../../../components/Button"
 import { Footer } from "../../../components/Footer"
 
-//known issue: ${api.defaults.baseURL}/files/${data.image} not working..
-
 export function AdminDetails() {
   const navigate = useNavigate()
 

@@ -14,7 +14,6 @@ export function Card({ isAdmin = false, data }) {
   //add on click function to <3 and btn with alert "feature in development"
 
   const image = `${api.defaults.baseURL}/files/${data.image}`
-  //know issue: this is not working. error: get 404 not found.
 
   return(
     <Container>
@@ -25,7 +24,6 @@ export function Card({ isAdmin = false, data }) {
       }
 
       <img 
-        // src={`${api.defaults.baseURL}/files/${data.image}`} -> not working either
         src={image}
         alt={`Imagem do prato ${data.title}`} 
       />
