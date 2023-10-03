@@ -27,7 +27,7 @@ export function UserHome() {
     }
 
     fetchDishes()
-  }, [search])
+  }, [search, dishes])
 
   return(
     <Container>

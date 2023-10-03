@@ -27,7 +27,7 @@ export function AdminHome() {
     }
 
     fetchDishes()
-  }, [search])
+  }, [search, dishes])
 
   return(
     <Container>
