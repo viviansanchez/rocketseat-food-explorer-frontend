@@ -133,7 +133,7 @@ export function AddDish(){
               }
 
               <RegisterTag 
-                isNew 
+                $isNew 
                 placeholder="Adicionar"
                 value={newIngredient}
                 onChange={e => setNewIngredient(e.target.value)}

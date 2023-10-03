@@ -2,13 +2,13 @@ import { Container } from "./styles";
 
 import { PiXBold, PiPlusBold } from 'react-icons/pi'
 
-export function RegisterTag({ isNew, value, onClick, ...rest }) {
+export function RegisterTag({ $isNew, value, onClick, ...rest }) {
   return(
-    <Container isNew={isNew}>
+    <Container $isNew={$isNew}>
       <input
         type="text"
         value={value}
-        readOnly={!isNew}
+        readOnly={!$isNew}
         {...rest}
       />
 
@@ -16,7 +16,7 @@ export function RegisterTag({ isNew, value, onClick, ...rest }) {
         type="button"
         onClick={onClick}
       >
-        {isNew ? <PiPlusBold /> : <PiXBold />}
+        {$isNew ? <PiPlusBold /> : <PiXBold />}
       </button>
     </Container>
   )

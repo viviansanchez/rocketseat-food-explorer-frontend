@@ -173,7 +173,7 @@ export function EditDish() {
                 ))
             }
               <RegisterTag 
-                isNew
+                $isNew
                 value={newIngredient}
                 onChange={e => setNewIngredient(e.target.value)}
                 onClick={handleAddIngredient}
