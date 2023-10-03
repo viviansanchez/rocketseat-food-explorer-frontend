@@ -19,7 +19,7 @@ export function Card({ isAdmin = false, data }) {
     <Container>
       {
         isAdmin ? 
-          <Link to={`/dishes/edit/${data.id}`} className="top-icon"><PiPencilSimpleBold /></Link> :
+          <Link to={`/edit/${data.id}`} className="top-icon"><PiPencilSimpleBold /></Link> :
           <button type="button" className="top-icon"><PiHeartBold /></button>  
       }
 
