@@ -18,16 +18,27 @@ export function UserHome() {
 
   useEffect(() => {
     async function fetchDishes(){
-      const response = await api.get(`/dishes?search=${search}`)
+      // what I did that results in dishes not being displayed on page on first load:
+      // const response = await api.get(`/dishes?search=${search}`)
+      // setDishes(response.data)
+
+      // setMeals(dishes.filter((dish) => dish.category === "meal"))
+      // setDesserts(dishes.filter(dish => dish.category === "dessert"))
+      // setDrinks(dishes.filter(dish => dish.category === "drink"))
+
+      // one way I found of resolving this was in the useEffect dependencies, add search AND dishes. This does work but it makes constant requests, like in a loop forever lmao so its not a really good solution
+
+      //what was suggested to me in correction and actually correctly is as follows (and also removing dishes from useEffect dependency):
+      const response = await api.get(`/dishes`, { params: { search } })
       setDishes(response.data)
 
-      setMeals(dishes.filter((dish) => dish.category === "meal"))
-      setDesserts(dishes.filter(dish => dish.category === "dessert"))
-      setDrinks(dishes.filter(dish => dish.category === "drink"))
+      setMeals(response.data.filter((dish) => dish.category === "meal"))
+      setDesserts(response.data.filter(dish => dish.category === "dessert"))
+      setDrinks(response.data.filter(dish => dish.category === "drink"))
     }
 
     fetchDishes()
-  }, [search, dishes])
+  }, [search])
 
   return(
     <Container>
